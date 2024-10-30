@@ -10,10 +10,6 @@ stages:
   jobs:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
-    steps:
-    - task: TerraformInstaller@0
-      inputs:
-        terraformVersion: 'latest'
 
     - script: |
         terraform --version
@@ -26,10 +22,7 @@ stages:
   jobs:
   - job: TerraformApply
     displayName: 'Terraform Apply'
-    steps:
-    - task: TerraformInstaller@0
-      inputs:
-        terraformVersion: 'latest'
+
         
     - script: |
         terraform --version
