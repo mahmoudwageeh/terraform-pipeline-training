@@ -11,7 +11,7 @@ stages:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
     steps:
-    - task: TerraformInstaller@1
+    - task: TerraformInstaller@0
       inputs:
         terraformVersion: 'latest'
 
@@ -27,7 +27,7 @@ stages:
   - job: TerraformApply
     displayName: 'Terraform Apply'
     steps:
-    - task: TerraformInstaller@1
+    - task: TerraformInstaller@0
       inputs:
         terraformVersion: 'latest'
         
