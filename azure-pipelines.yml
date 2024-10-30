@@ -10,6 +10,7 @@ stages:
   jobs:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
+    steps:
 
     - script: |
         terraform --version
@@ -22,7 +23,7 @@ stages:
   jobs:
   - job: TerraformApply
     displayName: 'Terraform Apply'
-
+    steps:
         
     - script: |
         terraform --version
