@@ -14,6 +14,8 @@ stages:
 
     - script: |
         terraform --version
+        az login --service-principal -u $(client_id) -p $(client_secret) --tenant $(tenant_id)
+        az account set --subscription $(subscription_id)
         terraform init 
         terraform plan -out=tfplan
       displayName: 'Terraform Init and Plan'
