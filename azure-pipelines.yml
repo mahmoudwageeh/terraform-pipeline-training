@@ -11,11 +11,15 @@ stages:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
     steps:
-    - script: |
-        terraform --version
-        terraform init 
-        terraform plan -out=tfplan
-      displayName: 'Terraform Init and Plan'
+    - task: TerraformCLI@2
+      inputs:
+        command: 'init'
+        allowTelemetryCollection: true
+    - task: TerraformCLI@2
+      inputs:
+        command: 'plan'
+        runAzLogin: true
+        allowTelemetryCollection: false
 
 - stage: Deploy
   displayName: 'Terraform Apply'
@@ -23,11 +27,12 @@ stages:
   - job: TerraformApply
     displayName: 'Terraform Apply'
     steps:
-        
-    - script: |
-        terraform --version 
-        terraform init
-        terraform apply -auto-approve
-      displayName: 'Terraform Apply'
-
-
+    - task: TerraformCLI@2
+      inputs:
+        command: 'init'
+        allowTelemetryCollection: false
+    - task: TerraformCLI@2
+      inputs:
+        command: 'apply'
+        commandOptions: '-auto-approve'
+        allowTelemetryCollection: false
