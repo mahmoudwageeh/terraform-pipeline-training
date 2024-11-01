@@ -12,14 +12,19 @@ terraform {
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
    features {}
-   skip_provider_registration = true
+   subscription_id = "b98d2b8d-4039-4e94-a202-67c3a82a3ced"
+   tenant_id = "17643a2b-8c04-48b3-89ef-d5149a115c30"
+
 }
+
 
 # Create a resource group
 resource "azurerm_resource_group" "example" {
   name     = "example-resources"
   location = "West Europe"
 }
+
+
 
 
 
