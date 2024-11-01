@@ -11,14 +11,7 @@ stages:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
     steps:
-    - task: AzureCLI@2
-      inputs:
-        azureSubscription: 'Azure subscription 1(b98d2b8d-4039-4e94-a202-67c3a82a3ced)'
-        scriptType: 'ps'
-        scriptLocation: 'inlineScript'
-        inlineScript: |
-          az login --service-principal -u ${env:CLIENT_ID} -p ${env:CLIENT_SECRET} --tenant ${env:TENANT_ID}
-          az account set --subscription ${env:SUBSCRIPTION_ID}
+
     - script: |
         terraform --version
         terraform init 
