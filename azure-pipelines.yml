@@ -15,7 +15,7 @@ stages:
         terraform --version
         terraform init 
         terraform plan -out=tfplan
-      displayName: 'Az login & Terraform Init and Plan'
+      displayName: 'Terraform Init and Plan'
 
 - stage: Deploy
   displayName: 'Terraform Apply'
@@ -25,7 +25,8 @@ stages:
     steps:
         
     - script: |
-        terraform --version
-        terraform init 
-        terraform apply 
-      displayName: 'Terraform Init and Apply'
+        terraform --version 
+        terraform apply -auto--approve
+      displayName: 'Terraform Apply'
+
+

@@ -26,3 +26,10 @@ variable "client_secret" {
   sensitive   = true
   default = "Ma68Q~bgfcU0M6BepLSaxSOmPO5sBro1UxThXcXP"
 }
+
+# Define a variable for the resource group name
+variable "resource_group_name" {
+  description = "The name of the resource group"
+  type        = string
+  default     = "created from terraform"
+}
