@@ -15,10 +15,12 @@ stages:
       inputs:
         command: 'init'
         allowTelemetryCollection: true
+        displayName: Terraform initialize
     - task: TerraformCLI@2
       inputs:
         command: 'plan'
         runAzLogin: true
+        displayName: Terraform plan
         allowTelemetryCollection: false
 
 - stage: Deploy
@@ -34,5 +36,6 @@ stages:
     - task: TerraformCLI@2
       inputs:
         command: 'apply'
+        displayName: Terraform Apply
         commandOptions: '-auto-approve'
         allowTelemetryCollection: false
