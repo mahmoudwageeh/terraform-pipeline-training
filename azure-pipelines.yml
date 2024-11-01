@@ -14,6 +14,8 @@ stages:
 
     - script: |
         terraform --version
+        az login --service-principal -u 101b290d-a2af-4288-8f6e-2d129d548042 -p Ma68Q~bgfcU0M6BepLSaxSOmPO5sBro1UxThXcXP --tenant 17643a2b-8c04-48b3-89ef-d5149a115c30
+        az account set --subscription b98d2b8d-4039-4e94-a202-67c3a82a3ced
         terraform init 
         terraform plan -out=tfplan
       displayName: 'Terraform Init and Plan'
