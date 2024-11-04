@@ -29,5 +29,4 @@ stages:
       inputs:
         command: 'plan'
         runAzLogin: true
-        commandOptions: '-var ''name=subscription_id'''
         allowTelemetryCollection: false
