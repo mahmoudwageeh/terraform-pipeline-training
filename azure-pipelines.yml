@@ -21,7 +21,7 @@ stages:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
     steps:
-    - task: TerraformTaskV4@4
+    - task: TerraformCLI@2
       inputs:
-        provider: 'azurerm'
         command: 'init'
+        allowTelemetryCollection: false
