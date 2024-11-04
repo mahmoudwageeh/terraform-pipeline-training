@@ -21,16 +21,18 @@ stages:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
     steps:
-    - task: TerraformCLI@2
+    - task: TerraformTaskV4@4
       inputs:
+        provider: 'azurerm'
         command: 'init'
-        allowTelemetryCollection: true
-        
-    - task: TerraformCLI@2
+        backendAzureRmUseEnvironmentVariablesForAuthentication: true
+        backendServiceArm: 'Azure subscription 1(b98d2b8d-4039-4e94-a202-67c3a82a3ced)'
+    - task: TerraformTaskV4@4
       inputs:
+        provider: 'azurerm'
         command: 'plan'
-        runAzLogin: true
-        allowTelemetryCollection: false
+        commandOptions: '-var ''name=subscription_id'' -var ''name=tenant_id'''
+        environmentServiceNameAzureRM: 'Azure subscription 1(b98d2b8d-4039-4e94-a202-67c3a82a3ced)'
 
 - stage: Deploy
   displayName: 'Terraform Apply'
