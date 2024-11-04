@@ -17,6 +17,7 @@ stages:
       inputs:
         command: 'init'
         allowTelemetryCollection: false
+
     - task: TerraformCLI@2
       inputs:
         command: 'plan'
