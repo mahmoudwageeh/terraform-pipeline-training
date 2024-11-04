@@ -23,3 +23,18 @@ stages:
         environmentServiceName: 'Azure subscription 1(b98d2b8d-4039-4e94-a202-67c3a82a3ced)'
         runAzLogin: true
         allowTelemetryCollection: false
+- stage: Deploy
+  displayName: 'Terraform Apply'
+  jobs:
+  - job: TerraformApply
+    displayName: 'Terraform Apply'
+    steps:
+    - task: TerraformCLI@2
+      inputs:
+        command: 'init'
+        allowTelemetryCollection: false
+    - task: TerraformCLI@2
+      inputs:
+        command: 'apply'
+        commandOptions: '-auto-approve'
+        allowTelemetryCollection: false     
