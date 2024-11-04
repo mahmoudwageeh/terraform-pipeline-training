@@ -12,10 +12,10 @@ terraform {
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
    features {}
-   subscription_id = yamldecode(file("azure-pipelines.yaml"))
-   tenant_id = yamldecode(file("azure-pipelines.yaml"))
-   client_id = yamldecode(file("azure-pipelines.yaml"))
-   client_secret = yamldecode(file("azure-pipelines.yaml"))
+   subscription_id = yamldecode(file("azure-pipelines.yaml"))["subscription_id"]
+   tenant_id = yamldecode(file("azure-pipelines.yaml"))["tenant_id"]
+   client_id = yamldecode(file("azure-pipelines.yaml"))["client_id"]
+   client_secret = yamldecode(file("azure-pipelines.yaml"))["client_secret"]
 }
 
 
