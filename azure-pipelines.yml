@@ -37,6 +37,6 @@ stages:
       inputs:
         command: 'apply'
         commandOptions: '-auto-approve'
-        environmentServiceName: 'Azure subscription 1(b98d2b8d-4039-4e94-a202-67c3a82a3ced)'
+        environmentServiceName: 'terraform-pipeline'
         runAzLogin: true
         allowTelemetryCollection: false     
