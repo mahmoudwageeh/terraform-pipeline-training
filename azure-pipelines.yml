@@ -4,6 +4,15 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+- name: subscription_id
+  value: $(subscription_id)
+- name:  tenant_id
+  value: $(tenant_id)
+- name:  client_id
+  value: $(client_id)
+- name: client_secret
+  value: $(client_secret)
 
 stages:
 - stage: Plan
