@@ -25,3 +25,9 @@ stages:
       inputs:
         command: 'init'
         allowTelemetryCollection: false
+    - task: TerraformCLI@2
+      inputs:
+        command: 'plan'
+        runAzLogin: true
+        commandOptions: '-var ''name=subscription_id'''
+        allowTelemetryCollection: false
