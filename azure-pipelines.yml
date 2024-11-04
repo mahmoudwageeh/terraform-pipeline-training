@@ -25,6 +25,3 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'init'
-        backendAzureRmUseEnvironmentVariablesForAuthentication: false
-        backendServiceArm: 'Azure subscription 1(b98d2b8d-4039-4e94-a202-67c3a82a3ced)'
-
