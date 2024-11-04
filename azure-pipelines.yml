@@ -10,7 +10,7 @@ variables:
 - name:  tenant_id
   value: $(tenant_id)
 - name:  client_id
-  valie: $(client_id)
+  value: $(client_id)
 - name: client_secret
   value: $(client_secret)
 
