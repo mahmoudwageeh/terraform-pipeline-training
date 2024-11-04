@@ -5,10 +5,14 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  subscription_id: $(subscription_id)
-  tenant_id: $(tenant_id)
-  client_id: $(client_id)
-  client_secret: $(client_secret)
+- name: subscription_id
+  value: $(subscription_id)
+- name:  tenant_id
+  value: $(tenant_id)
+- name:  client_id
+  valie: $(client_id)
+- name: client_secret
+  value: $(client_secret)
 
 stages:
 - stage: Plan
