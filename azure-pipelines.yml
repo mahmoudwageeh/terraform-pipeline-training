@@ -37,4 +37,5 @@ stages:
       inputs:
         command: 'apply'
         commandOptions: '-auto-approve'
+        runAzLogin: true
         allowTelemetryCollection: false     
