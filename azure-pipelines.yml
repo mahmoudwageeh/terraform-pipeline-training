@@ -22,11 +22,11 @@ stages:
         command: 'init'
         allowTelemetryCollection: false
 
-    - task: TerraformCLI@2
+    - task: TerraformTaskV4@4
       inputs:
+        provider: 'azurerm'
         command: 'plan'
-        environmentServiceName: 'AzureDevops-AzureARM SC'
-        allowTelemetryCollection: false
+        environmentServiceNameAzureRM: 'AzureDevops-AzureARM SC'
 - stage: Deploy
   displayName: 'Terraform Apply'
   jobs:
