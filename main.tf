@@ -18,9 +18,12 @@ provider "azurerm" {
    client_secret = var.client_secret
 }
 
+resource "random_id" "rg_id" {
+  byte_length = 4
+}
 
 # Create a resource group
 resource "azurerm_resource_group" "example" {
-  name     = "Terraform_RG"
+  name     = "Terraform-RG-${random_id.rg_id.hex}"
   location = "West Europe"
 }
