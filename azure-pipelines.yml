@@ -11,11 +11,10 @@ stages:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
     steps:
-    - task: TerraformTaskV4@4
+    - task: TerraformCLI@2
       inputs:
-        provider: 'azurerm'
         command: 'init'
-        backendServiceArm: 'AzureDevops-AzureARM SC'
+        allowTelemetryCollection: false
 
     - task: TerraformTaskV4@4
       inputs:
@@ -29,11 +28,10 @@ stages:
   - job: TerraformApply
     displayName: 'Terraform Apply'
     steps:
-    - task: TerraformTaskV4@4
+    - task: TerraformCLI@2
       inputs:
-        provider: 'azurerm'
         command: 'init'
-        backendServiceArm: 'AzureDevops-AzureARM SC'
+        allowTelemetryCollection: false
     - task: TerraformTaskV4@4
       inputs:
         provider: 'azurerm'
