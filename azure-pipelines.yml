@@ -11,11 +11,11 @@ stages:
   - job: TerraformPlan
     displayName: 'Terraform Plan'
     steps:
-    - task: TerraformCLI@2
-      displayName: 'Terraform Init'
+    - task: TerraformTaskV4@4
       inputs:
+        provider: 'azurerm'
         command: 'init'
-        allowTelemetryCollection: false
+        backendAzureRmUseEnvironmentVariablesForAuthentication: true
 
     - task: TerraformTaskV4@4
       displayName: 'Terraform Plan'
