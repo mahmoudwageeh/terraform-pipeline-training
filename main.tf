@@ -24,3 +24,8 @@ resource "azurerm_resource_group" "example" {
   name     = "Terraform-RG2"
   location = "West Europe"
 }
+
+resource "azurerm_resource_group" "example" {
+  name     = "Terraform-RG3"
+  location = "West Europe"
+}
