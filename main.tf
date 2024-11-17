@@ -18,7 +18,4 @@ provider "azurerm" {
    client_secret = var.client_secret
 }
 
-resource "random_id" "rg_id" {
-  byte_length = 4
-}
 
