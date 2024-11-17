@@ -21,7 +21,7 @@ stages:
         backendAzureRmStorageAccountName: 'Terraform-StorageAccount'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
-        backendServiceArm: ''
+        backendServiceArm: 'AzureDevops-AzureARM SC'
 
     - task: TerraformTaskV4@4
       displayName: 'Terraform Plan'
