@@ -16,8 +16,10 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'init'
-        commandOptions: '-backend = false'
         backendAzureRmUseEnvironmentVariablesForAuthentication: true
+        backendAzureRmResourceGroupName: 'Terraform-RG'
+        backendAzureRmStorageAccountName: 'Terraform-StorageAccount'
+        backendAzureRmContainerName: 'tfstate'
 
     - task: TerraformTaskV4@4
       displayName: 'Terraform Plan'
