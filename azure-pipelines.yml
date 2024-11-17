@@ -18,7 +18,7 @@ stages:
         command: 'init'
         backendAzureRmUseEnvironmentVariablesForAuthentication: true
         backendAzureRmResourceGroupName: 'Terraform-RG'
-        backendAzureRmStorageAccountName: 'Terraform-StorageAccount'
+        backendAzureRmStorageAccountName: 'terraformsa94'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
         backendServiceArm: 'AzureDevops-AzureARM SC'
