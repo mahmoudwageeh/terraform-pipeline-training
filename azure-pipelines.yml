@@ -16,7 +16,6 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'init'
-        backendAzureRmUseEnvironmentVariablesForAuthentication: true
         backendAzureRmResourceGroupName: 'Terraform-RG'
         backendAzureRmStorageAccountName: 'terraformsa94'
         backendAzureRmContainerName: 'tfstate'
