@@ -22,21 +22,3 @@ resource "random_id" "rg_id" {
   byte_length = 4
 }
 
-# Create a resource group
-resource "azurerm_resource_group" "example" {
-  name     = "Terraform-RG"
-  location = "West Europe"
-}
-
-resource "azurerm_storage_account" "example" {
-  name                     = "Terraform-StorageAccount"
-  resource_group_name      = azurerm_resource_group.example.name
-  location                 = azurerm_resource_group.example.location
-  account_tier             = "Standard"
-}
-
-resource "azurerm_storage_container" "tfstate" {
-  name                  = "tfstate"
-  storage_account_name  = azurerm_storage_account.example.name
-  container_access_type = "private"
-}
