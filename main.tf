@@ -18,4 +18,7 @@ provider "azurerm" {
    client_secret = var.client_secret
 }
 
-
+resource "azurerm_resource_group" "example" {
+  name     = "Terraform-RG2"
+  location = "West Europe"
+}
