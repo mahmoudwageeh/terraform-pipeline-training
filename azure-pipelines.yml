@@ -16,17 +16,6 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'init'
-        commandOptions: '-reconfigure'
-        backendAzureRmResourceGroupName: 'Terraform-RG'
-        backendAzureRmStorageAccountName: 'terraformsa94'
-        backendAzureRmContainerName: 'tfstate'
-        backendAzureRmKey: 'test.terraform.tfstate'
-        backendServiceArm: 'AzureDevops-AzureARM SC'
-    - task: TerraformTaskV4@4
-      displayName: 'Terraform Init'
-      inputs:
-        provider: 'azurerm'
-        command: 'init'
         backendAzureRmResourceGroupName: 'Terraform-RG'
         backendAzureRmStorageAccountName: 'terraformsa94'
         backendAzureRmContainerName: 'tfstate'
