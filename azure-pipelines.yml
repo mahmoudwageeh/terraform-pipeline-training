@@ -31,8 +31,7 @@ stages:
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
         backendServiceArm: 'AzureDevops-AzureARM SC'
-        workingDirectory: '$(System.DefaultWorkingDirectory)'
-        customCommand: '-chdir=$(System.DefaultWorkingDirectory force-unlock xxxxxxxxxxxxxxxx'
+        customCommand: '-chdir=$(System.DefaultWorkingDirectory) force-unlock xxxxxxxxxxxxxxxx'
         environmentServiceNameAzureRM: 'AzureDevops-AzureARM SC'
     - task: TerraformTaskV4@4
       displayName: 'Terraform Plan'
