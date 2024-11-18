@@ -31,7 +31,7 @@ stages:
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
         backendServiceArm: 'AzureDevops-AzureARM SC'
-        customCommand: 'force-unlock -force $(LOCK_ID)'
+        customCommand: 'force-unlock xxxxxxxxxxxxxxxx'
         environmentServiceNameAzureRM: 'AzureDevops-AzureARM SC'
 
 
