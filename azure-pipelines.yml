@@ -30,7 +30,8 @@ stages:
         backendAzureRmStorageAccountName: 'terraformsa94'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
-        backendServiceArm: 'AzureDevops-AzureARM SC'        
+        backendServiceArm: 'AzureDevops-AzureARM SC'
+        workingDirectory: "https://github.com/mahmoudwageeh/terraform-pipeline-training"
         customCommand: 'force-unlock xxxxxxxxxxxxxxxx'
         environmentServiceNameAzureRM: 'AzureDevops-AzureARM SC'
     - task: TerraformTaskV4@4
