@@ -33,3 +33,9 @@ variable "resource_group_name" {
   type        = string
   default = ""
 }
+
+variable "vnet_address_space_cidr" {
+  description = "vbnet address space cidr"
+  type        = list(string)
+  default     = ["10.0.0.0/22"]
+}
