@@ -24,7 +24,8 @@ stages:
     - task: TerraformTaskV4@4
       inputs:
         provider: 'azurerm'
-        command: 'force-unlock'
+        command: 'custom'
+        customCommand: 'force-unlock'
         outputTo: 'console'
         commandOptions: 'xxxxxxxxxxxx'
         environmentServiceNameAzureRM: 'AzureDevops-AzureARM SC'
