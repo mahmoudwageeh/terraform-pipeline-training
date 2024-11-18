@@ -21,12 +21,18 @@ stages:
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
         backendServiceArm: 'AzureDevops-AzureARM SC'
-
-    - task: TerraformCLI@2
+    - task: TerraformTaskV4@4
       inputs:
-        command: 'forceunlock'
-        allowTelemetryCollection: false
-        lockID: 'xxxxxxxxxxxxxxxxxxx'
+        provider: 'azurerm'
+        command: 'custom'
+        outputTo: 'console'
+        backendAzureRmResourceGroupName: 'Terraform-RG'
+        backendAzureRmStorageAccountName: 'terraformsa94'
+        backendAzureRmContainerName: 'tfstate'
+        backendAzureRmKey: 'test.terraform.tfstate'
+        backendServiceArm: 'AzureDevops-AzureARM SC'
+        customCommand: 'forceunlock xxxxxxxxxxxxxxxx'
+        environmentServiceNameAzureRM: 'AzureDevops-AzureARM SC'
     - task: TerraformTaskV4@4
       displayName: 'Terraform Plan'
       inputs:
