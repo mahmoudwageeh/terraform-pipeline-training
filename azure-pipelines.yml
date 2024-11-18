@@ -32,7 +32,7 @@ stages:
         backendAzureRmKey: 'test.terraform.tfstate'
         backendServiceArm: 'AzureDevops-AzureARM SC'
         workingDirectory: '$(System.DefaultWorkingDirectory)'
-        customCommand: 'force-unlock xxxxxxxxxxxxxxxx'
+        customCommand: '--force-unlock xxxxxxxxxxxxxxxx'
         environmentServiceNameAzureRM: 'AzureDevops-AzureARM SC'
     - task: TerraformTaskV4@4
       displayName: 'Terraform Plan'
