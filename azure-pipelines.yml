@@ -21,20 +21,13 @@ stages:
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
         backendServiceArm: 'AzureDevops-AzureARM SC'
-    - task: TerraformTaskV4@4
-      inputs:
-        provider: 'azurerm'
-        command: 'custom'
-        customCommand: 'force-unlock'
-        outputTo: 'console'
-        commandOptions: 'xxxxxxxxxxxx'
-        environmentServiceNameAzureRM: 'AzureDevops-AzureARM SC'
+
     - task: TerraformTaskV4@4
       displayName: 'Terraform Plan'
       inputs:
         provider: 'azurerm'
         command: 'plan'
-        commandOptions: '-var "subscription_id=$(subscription_id)" -var "tenant_id=$(tenant_id)" -var "client_id=$(client_id)" -var "client_secret=$(client_secret)"'
+        commandOptions: '-var "subscription_id=$(subscription_id)" -var "tenant_id=$(tenant_id)" -var "client_id=$(client_id)" -var "client_secret=$(client_secret)" -var "vnet_address_space_cidr)=$(vnet_address_space_cidr)"'
         environmentServiceNameAzureRM: 'AzureDevops-AzureARM SC'
 - stage: Deploy
   displayName: 'Terraform Apply'
