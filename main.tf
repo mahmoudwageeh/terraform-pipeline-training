@@ -41,3 +41,7 @@ resource "azurerm_virtual_network" "vnet" {
   resource_group_name = "Terraform-RG"
   address_space       = var.vnet_address_space_cidr
 }
+
+output "azurerm_resource_group" {
+  value = "Hello RG name is, ${azurerm_resource_group.example2.name}"
+}
